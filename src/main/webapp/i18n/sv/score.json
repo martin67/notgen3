@@ -1,0 +1,24 @@
+{
+  "notgen3App": {
+    "score": {
+      "home": {
+        "title": "Scores",
+        "createLabel": "Skapa en ny Score",
+        "createOrEditLabel": "Skapa eller ändra en Score",
+        "notFound": "No Scores found"
+      },
+      "created": "En ny Score är skapad med id {{ param }}",
+      "updated": "En Score är uppdaterad med id  {{ param }}",
+      "deleted": "En Score är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Score {{ id }}?"
+      },
+      "detail": {
+        "title": "Score"
+      },
+      "name": "Name",
+      "scorePart": "Score Part",
+      "song": "Song"
+    }
+  }
+}

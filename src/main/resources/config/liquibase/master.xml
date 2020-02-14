@@ -14,6 +14,17 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214210900_added_entity_Song.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211000_added_entity_Instrument.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211100_added_entity_Score.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211200_added_entity_ScorePart.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211300_added_entity_PlayList.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211400_added_entity_PlayListEntry.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211500_added_entity_Setting.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200214211100_added_entity_constraints_Score.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211200_added_entity_constraints_ScorePart.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211400_added_entity_constraints_PlayListEntry.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200214211500_added_entity_constraints_Setting.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

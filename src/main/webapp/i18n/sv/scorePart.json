@@ -1,0 +1,27 @@
+{
+  "notgen3App": {
+    "scorePart": {
+      "home": {
+        "title": "Score Parts",
+        "createLabel": "Skapa en ny Score Part",
+        "createOrEditLabel": "Skapa eller ändra en Score Part",
+        "notFound": "No Score Parts found"
+      },
+      "created": "En ny Score Part är skapad med id {{ param }}",
+      "updated": "En Score Part är uppdaterad med id  {{ param }}",
+      "deleted": "En Score Part är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Score Part {{ id }}?"
+      },
+      "detail": {
+        "title": "Score Part"
+      },
+      "page": "Page",
+      "length": "Length",
+      "comment": "Comment",
+      "googleId": "Google Id",
+      "score": "Score",
+      "instrument": "Instrument"
+    }
+  }
+}

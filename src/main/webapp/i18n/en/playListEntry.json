@@ -1,0 +1,27 @@
+{
+  "notgen3App": {
+    "playListEntry": {
+      "home": {
+        "title": "Play List Entries",
+        "createLabel": "Create a new Play List Entry",
+        "createOrEditLabel": "Create or edit a Play List Entry",
+        "notFound": "No Play List Entries found"
+      },
+      "created": "A new Play List Entry is created with identifier {{ param }}",
+      "updated": "A Play List Entry is updated with identifier {{ param }}",
+      "deleted": "A Play List Entry is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Play List Entry {{ id }}?"
+      },
+      "detail": {
+        "title": "Play List Entry"
+      },
+      "text": "Text",
+      "sortOrder": "Sort Order",
+      "bold": "Bold",
+      "comment": "Comment",
+      "date": "Date",
+      "playList": "Play List"
+    }
+  }
+}

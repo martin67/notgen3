@@ -1,0 +1,66 @@
+entity Song {
+	title String required
+    subTitle String
+    genre String
+    composer String
+    author String
+    arranger String
+    year Integer
+    publisher String
+}
+
+entity Instrument {
+	name String
+}
+
+entity Score {
+	name String
+}
+
+entity ScorePart {
+    page Integer
+    length Integer
+    comment String
+    googleId String
+}
+
+entity PlayList {
+	name String
+    comment String
+}
+
+entity PlayListEntry {
+	text String
+    sortOrder Integer
+    bold Boolean
+    comment String
+    date LocalDate
+}
+
+entity Setting {
+    name String
+}
+
+relationship OneToMany {
+	Score{scorePart} to ScorePart{score}
+    Instrument{scorePart} to ScorePart{instrument}
+    Song{score} to Score{song}
+    PlayList{playListEntry} to PlayListEntry{playList}
+}
+
+relationship ManyToMany {
+    Setting{instrument} to Instrument{setting}
+}
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+paginate Score with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

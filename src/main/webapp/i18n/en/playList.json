@@ -1,0 +1,24 @@
+{
+  "notgen3App": {
+    "playList": {
+      "home": {
+        "title": "Play Lists",
+        "createLabel": "Create a new Play List",
+        "createOrEditLabel": "Create or edit a Play List",
+        "notFound": "No Play Lists found"
+      },
+      "created": "A new Play List is created with identifier {{ param }}",
+      "updated": "A Play List is updated with identifier {{ param }}",
+      "deleted": "A Play List is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Play List {{ id }}?"
+      },
+      "detail": {
+        "title": "Play List"
+      },
+      "name": "Name",
+      "comment": "Comment",
+      "playListEntry": "Play List Entry"
+    }
+  }
+}

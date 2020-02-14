@@ -1,0 +1,23 @@
+{
+  "notgen3App": {
+    "setting": {
+      "home": {
+        "title": "Settings",
+        "createLabel": "Skapa en ny Setting",
+        "createOrEditLabel": "Skapa eller ändra en Setting",
+        "notFound": "No Settings found"
+      },
+      "created": "En ny Setting är skapad med id {{ param }}",
+      "updated": "En Setting är uppdaterad med id  {{ param }}",
+      "deleted": "En Setting är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Setting {{ id }}?"
+      },
+      "detail": {
+        "title": "Setting"
+      },
+      "name": "Name",
+      "instrument": "Instrument"
+    }
+  }
+}

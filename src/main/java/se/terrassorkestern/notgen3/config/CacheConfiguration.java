@@ -42,6 +42,19 @@ public class CacheConfiguration {
             createCache(cm, se.terrassorkestern.notgen3.domain.User.class.getName());
             createCache(cm, se.terrassorkestern.notgen3.domain.Authority.class.getName());
             createCache(cm, se.terrassorkestern.notgen3.domain.User.class.getName() + ".authorities");
+            createCache(cm, se.terrassorkestern.notgen3.domain.Song.class.getName());
+            createCache(cm, se.terrassorkestern.notgen3.domain.Song.class.getName() + ".scores");
+            createCache(cm, se.terrassorkestern.notgen3.domain.Instrument.class.getName());
+            createCache(cm, se.terrassorkestern.notgen3.domain.Instrument.class.getName() + ".scoreParts");
+            createCache(cm, se.terrassorkestern.notgen3.domain.Instrument.class.getName() + ".settings");
+            createCache(cm, se.terrassorkestern.notgen3.domain.Score.class.getName());
+            createCache(cm, se.terrassorkestern.notgen3.domain.Score.class.getName() + ".scoreParts");
+            createCache(cm, se.terrassorkestern.notgen3.domain.ScorePart.class.getName());
+            createCache(cm, se.terrassorkestern.notgen3.domain.PlayList.class.getName());
+            createCache(cm, se.terrassorkestern.notgen3.domain.PlayList.class.getName() + ".playListEntries");
+            createCache(cm, se.terrassorkestern.notgen3.domain.PlayListEntry.class.getName());
+            createCache(cm, se.terrassorkestern.notgen3.domain.Setting.class.getName());
+            createCache(cm, se.terrassorkestern.notgen3.domain.Setting.class.getName() + ".instruments");
             // jhipster-needle-ehcache-add-entry
         };
     }

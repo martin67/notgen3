@@ -1,0 +1,44 @@
+{
+    "name": "PlayListEntry",
+    "fields": [
+        {
+            "fieldName": "text",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bold",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "playList",
+            "otherEntityRelationshipName": "playListEntry",
+            "relationshipName": "playList",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200214211400",
+    "entityTableName": "play_list_entry",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

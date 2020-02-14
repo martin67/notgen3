@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="notgen3App.playListEntry.home.title">Play List Entries</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-play-list-entry" [routerLink]="['/play-list-entry/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="notgen3App.playListEntry.home.createLabel">
+            Create a new Play List Entry
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="playListEntries?.length === 0">
+        <span jhiTranslate="notgen3App.playListEntry.home.notFound">No playListEntries found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="playListEntries?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="notgen3App.playListEntry.text">Text</span></th>
+                    <th scope="col" ><span jhiTranslate="notgen3App.playListEntry.sortOrder">Sort Order</span></th>
+                    <th scope="col" ><span jhiTranslate="notgen3App.playListEntry.bold">Bold</span></th>
+                    <th scope="col" ><span jhiTranslate="notgen3App.playListEntry.comment">Comment</span></th>
+                    <th scope="col" ><span jhiTranslate="notgen3App.playListEntry.date">Date</span></th>
+                    <th scope="col" ><span jhiTranslate="notgen3App.playListEntry.playList">Play List</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let playListEntry of playListEntries ;trackBy: trackId">
+                    <td><a [routerLink]="['/play-list-entry', playListEntry.id, 'view']">{{ playListEntry.id }}</a></td>
+                    <td>{{ playListEntry.text }}</td>
+                    <td>{{ playListEntry.sortOrder }}</td>
+                    <td>{{ playListEntry.bold }}</td>
+                    <td>{{ playListEntry.comment }}</td>
+                    <td>{{ playListEntry.date | date:'mediumDate' }}</td>
+                    <td>
+                        <div *ngIf="playListEntry.playList">
+                            <a [routerLink]="['/play-list', playListEntry.playList?.id, 'view']" >{{ playListEntry.playList?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/play-list-entry', playListEntry.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/play-list-entry', playListEntry.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(playListEntry)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
