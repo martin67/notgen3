@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "se.terrassorkestern.notgen3",
+      "nativeLanguage": "sv"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "monolith",
+    "baseName": "notgen3",
+    "packageName": "se.terrassorkestern.notgen3",
+    "packageFolder": "se/terrassorkestern/notgen3",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZWU0ZGY2OGE4N2IwNDBjMDE3MmQ1ZWI2M2M5MzQwMTAzZDAxYWMzYmVlZjg1MTA0Y2YxOTMyYjBhMjczOWFmYTQ0MWNlZmQ4ZDM4YjVlMmM3MjIzMTUzMDA3ODlhM2M3ZDQyZTUwZWIyMGZlMzMwNTU5NDYyZjY0MDhkNGU4ZWY=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1581701458461,
+    "testFrameworks": ["gatling", "cucumber", "protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "sv",
+    "languages": ["sv", "en"],
+    "blueprints": []
+  }
+}
