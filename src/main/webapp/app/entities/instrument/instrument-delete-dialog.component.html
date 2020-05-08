@@ -1,4 +1,4 @@
-<form *ngIf="instrument" name="deleteForm" (ngSubmit)="confirmDelete(instrument.id!)">
+<form *ngIf="instrument" name="deleteForm" (ngSubmit)="confirmDelete(instrument?.id!)">
     <div class="modal-header">
         <h4 class="modal-title" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
 

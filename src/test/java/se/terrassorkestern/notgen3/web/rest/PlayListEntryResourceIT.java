@@ -3,27 +3,21 @@ package se.terrassorkestern.notgen3.web.rest;
 import se.terrassorkestern.notgen3.Notgen3App;
 import se.terrassorkestern.notgen3.domain.PlayListEntry;
 import se.terrassorkestern.notgen3.repository.PlayListEntryRepository;
-import se.terrassorkestern.notgen3.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.Validator;
-
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
 
-import static se.terrassorkestern.notgen3.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -33,6 +27,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link PlayListEntryResource} REST controller.
  */
 @SpringBootTest(classes = Notgen3App.class)
+
+@AutoConfigureMockMvc
+@WithMockUser
 public class PlayListEntryResourceIT {
 
     private static final String DEFAULT_TEXT = "AAAAAAAAAA";
@@ -54,35 +51,12 @@ public class PlayListEntryResourceIT {
     private PlayListEntryRepository playListEntryRepository;
 
     @Autowired
-    private MappingJackson2HttpMessageConverter jacksonMessageConverter;
-
-    @Autowired
-    private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
-
-    @Autowired
-    private ExceptionTranslator exceptionTranslator;
-
-    @Autowired
     private EntityManager em;
 
     @Autowired
-    private Validator validator;
-
     private MockMvc restPlayListEntryMockMvc;
 
     private PlayListEntry playListEntry;
-
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        final PlayListEntryResource playListEntryResource = new PlayListEntryResource(playListEntryRepository);
-        this.restPlayListEntryMockMvc = MockMvcBuilders.standaloneSetup(playListEntryResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter)
-            .setValidator(validator).build();
-    }
 
     /**
      * Create an entity for this test.
@@ -127,7 +101,7 @@ public class PlayListEntryResourceIT {
 
         // Create the PlayListEntry
         restPlayListEntryMockMvc.perform(post("/api/play-list-entries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(playListEntry)))
             .andExpect(status().isCreated());
 
@@ -152,7 +126,7 @@ public class PlayListEntryResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restPlayListEntryMockMvc.perform(post("/api/play-list-entries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(playListEntry)))
             .andExpect(status().isBadRequest());
 
@@ -226,7 +200,7 @@ public class PlayListEntryResourceIT {
             .date(UPDATED_DATE);
 
         restPlayListEntryMockMvc.perform(put("/api/play-list-entries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(updatedPlayListEntry)))
             .andExpect(status().isOk());
 
@@ -250,7 +224,7 @@ public class PlayListEntryResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restPlayListEntryMockMvc.perform(put("/api/play-list-entries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(playListEntry)))
             .andExpect(status().isBadRequest());
 
@@ -269,7 +243,7 @@ public class PlayListEntryResourceIT {
 
         // Delete the playListEntry
         restPlayListEntryMockMvc.perform(delete("/api/play-list-entries/{id}", playListEntry.getId())
-            .accept(TestUtil.APPLICATION_JSON))
+            .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item
