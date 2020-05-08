@@ -1,0 +1,27 @@
+{
+  "notgen3App": {
+    "playListEntry": {
+      "home": {
+        "title": "Play List Entries",
+        "createLabel": "Skapa en ny Play List Entry",
+        "createOrEditLabel": "Skapa eller ändra en Play List Entry",
+        "notFound": "No Play List Entries found"
+      },
+      "created": "En ny Play List Entry är skapad med id {{ param }}",
+      "updated": "En Play List Entry är uppdaterad med id  {{ param }}",
+      "deleted": "En Play List Entry är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Play List Entry {{ id }}?"
+      },
+      "detail": {
+        "title": "Play List Entry"
+      },
+      "text": "Text",
+      "sortOrder": "Sort Order",
+      "bold": "Bold",
+      "comment": "Comment",
+      "date": "Date",
+      "playList": "Play List"
+    }
+  }
+}

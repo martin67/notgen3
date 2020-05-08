@@ -1,0 +1,47 @@
+{
+    "name": "ScorePart",
+    "fields": [
+        {
+            "fieldName": "page",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "length",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "googleId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "score",
+            "otherEntityRelationshipName": "scorePart",
+            "relationshipName": "score",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "instrument",
+            "otherEntityRelationshipName": "scorePart",
+            "relationshipName": "instrument",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200214211200",
+    "entityTableName": "score_part",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

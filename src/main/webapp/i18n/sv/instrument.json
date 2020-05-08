@@ -1,0 +1,24 @@
+{
+  "notgen3App": {
+    "instrument": {
+      "home": {
+        "title": "Instruments",
+        "createLabel": "Skapa en ny Instrument",
+        "createOrEditLabel": "Skapa eller ändra en Instrument",
+        "notFound": "No Instruments found"
+      },
+      "created": "En ny Instrument är skapad med id {{ param }}",
+      "updated": "En Instrument är uppdaterad med id  {{ param }}",
+      "deleted": "En Instrument är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Instrument {{ id }}?"
+      },
+      "detail": {
+        "title": "Instrument"
+      },
+      "name": "Name",
+      "scorePart": "Score Part",
+      "setting": "Setting"
+    }
+  }
+}

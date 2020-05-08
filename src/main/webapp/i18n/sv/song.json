@@ -1,0 +1,30 @@
+{
+  "notgen3App": {
+    "song": {
+      "home": {
+        "title": "Songs",
+        "createLabel": "Skapa en ny Song",
+        "createOrEditLabel": "Skapa eller ändra en Song",
+        "notFound": "No Songs found"
+      },
+      "created": "En ny Song är skapad med id {{ param }}",
+      "updated": "En Song är uppdaterad med id  {{ param }}",
+      "deleted": "En Song är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Song {{ id }}?"
+      },
+      "detail": {
+        "title": "Song"
+      },
+      "title": "Title",
+      "subTitle": "Sub Title",
+      "genre": "Genre",
+      "composer": "Composer",
+      "author": "Author",
+      "arranger": "Arranger",
+      "year": "Year",
+      "publisher": "Publisher",
+      "score": "Score"
+    }
+  }
+}

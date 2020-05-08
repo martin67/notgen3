@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="setting">
+            <h2><span jhiTranslate="notgen3App.setting.detail.title">Setting</span> {{ setting.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="notgen3App.setting.name">Name</span></dt>
+                <dd>
+                    <span>{{ setting.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="notgen3App.setting.instrument">Instrument</span></dt>
+                <dd>
+                    <span *ngFor="let instrument of setting.instruments; let last = last">
+                        <a [routerLink]="['/instrument', instrument?.id, 'view']">{{ instrument.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/setting', setting.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

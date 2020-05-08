@@ -1,0 +1,27 @@
+{
+  "notgen3App": {
+    "scorePart": {
+      "home": {
+        "title": "Score Parts",
+        "createLabel": "Create a new Score Part",
+        "createOrEditLabel": "Create or edit a Score Part",
+        "notFound": "No Score Parts found"
+      },
+      "created": "A new Score Part is created with identifier {{ param }}",
+      "updated": "A Score Part is updated with identifier {{ param }}",
+      "deleted": "A Score Part is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Score Part {{ id }}?"
+      },
+      "detail": {
+        "title": "Score Part"
+      },
+      "page": "Page",
+      "length": "Length",
+      "comment": "Comment",
+      "googleId": "Google Id",
+      "score": "Score",
+      "instrument": "Instrument"
+    }
+  }
+}

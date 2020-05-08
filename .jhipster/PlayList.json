@@ -1,0 +1,31 @@
+{
+    "name": "PlayList",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "playListEntry",
+            "otherEntityRelationshipName": "playList",
+            "relationshipName": "playListEntry"
+        }
+    ],
+    "changelogDate": "20200214211300",
+    "entityTableName": "play_list",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

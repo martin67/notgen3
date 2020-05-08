@@ -1,0 +1,35 @@
+{
+    "name": "Instrument",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "scorePart",
+            "otherEntityRelationshipName": "instrument",
+            "relationshipName": "scorePart"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "setting",
+            "otherEntityRelationshipName": "instrument",
+            "relationshipName": "setting",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200214211000",
+    "entityTableName": "instrument",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
