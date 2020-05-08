@@ -4,6 +4,7 @@ import { Resolve, ActivatedRouteSnapshot, Routes, Router } from '@angular/router
 import { Observable, of, EMPTY } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 
+import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { IPlayListEntry, PlayListEntry } from 'app/shared/model/play-list-entry.model';
 import { PlayListEntryService } from './play-list-entry.service';
@@ -38,7 +39,7 @@ export const playListEntryRoute: Routes = [
     path: '',
     component: PlayListEntryComponent,
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'notgen3App.playListEntry.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -50,7 +51,7 @@ export const playListEntryRoute: Routes = [
       playListEntry: PlayListEntryResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'notgen3App.playListEntry.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -62,7 +63,7 @@ export const playListEntryRoute: Routes = [
       playListEntry: PlayListEntryResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'notgen3App.playListEntry.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -74,7 +75,7 @@ export const playListEntryRoute: Routes = [
       playListEntry: PlayListEntryResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'notgen3App.playListEntry.home.title'
     },
     canActivate: [UserRouteAccessService]

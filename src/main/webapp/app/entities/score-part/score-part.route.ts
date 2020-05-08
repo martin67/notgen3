@@ -4,6 +4,7 @@ import { Resolve, ActivatedRouteSnapshot, Routes, Router } from '@angular/router
 import { Observable, of, EMPTY } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 
+import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { IScorePart, ScorePart } from 'app/shared/model/score-part.model';
 import { ScorePartService } from './score-part.service';
@@ -38,7 +39,7 @@ export const scorePartRoute: Routes = [
     path: '',
     component: ScorePartComponent,
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'notgen3App.scorePart.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -50,7 +51,7 @@ export const scorePartRoute: Routes = [
       scorePart: ScorePartResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'notgen3App.scorePart.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -62,7 +63,7 @@ export const scorePartRoute: Routes = [
       scorePart: ScorePartResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'notgen3App.scorePart.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -74,7 +75,7 @@ export const scorePartRoute: Routes = [
       scorePart: ScorePartResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'notgen3App.scorePart.home.title'
     },
     canActivate: [UserRouteAccessService]

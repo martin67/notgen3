@@ -1,6 +1,7 @@
 package se.terrassorkestern.notgen3.repository;
 
 import se.terrassorkestern.notgen3.Notgen3App;
+
 import se.terrassorkestern.notgen3.config.Constants;
 import se.terrassorkestern.notgen3.config.audit.AuditEventConverter;
 import se.terrassorkestern.notgen3.domain.PersistentAuditEvent;

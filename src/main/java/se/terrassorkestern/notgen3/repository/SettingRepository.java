@@ -26,5 +26,4 @@ public interface SettingRepository extends JpaRepository<Setting, Long> {
 
     @Query("select setting from Setting setting left join fetch setting.instruments where setting.id =:id")
     Optional<Setting> findOneWithEagerRelationships(@Param("id") Long id);
-
 }
